@@ -1,4 +1,4 @@
-export default function TransactionItem({ tx }) {
+export default function TransactionItem({ tx, onDelete }) {
   return (
     <div>
       <span>{tx.date}</span>
@@ -8,6 +8,7 @@ export default function TransactionItem({ tx }) {
         {tx.type === 'income' ? '+' : '-'}
         {tx.amount}
       </span>
+      <button onClick={() => onDelete(tx.id)}>Delete</button>
     </div>
   );
 }
